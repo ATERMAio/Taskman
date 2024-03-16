@@ -1,0 +1,255 @@
+:root {
+  --text-light: #ececec;
+  --button-color: #8c00ff;
+  --background-dark: #28262c;
+  --container-background: #1f1d22;
+  --container-border: #ffffff1a;
+}
+
+body {
+  padding: 0;
+  background: var(--background-dark);
+  margin: 0;
+  font-family: monospace;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+input,
+select,
+button {
+  font-family: monospace;
+}
+.layout {
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 16px;
+}
+.task,
+.addTask {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 16px;
+  min-height: 180px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: var(--container-background);
+  color: var(--text-light);
+  box-shadow: 0px 0px 0px 1px var(--container-border);
+  transition: box-shadow 0.3s ease;
+}
+.addTask input,
+.addTask input:active,
+.addTask button {
+  outline: none;
+  border: none;
+  border-radius: 0px;
+  color: var(--text-light);
+  padding: 16px;
+  align-self: center;
+  background: none;
+}
+.addTask button {
+  border-top: 1px solid #585858;
+  border-right: 1px solid #585858;
+  border-bottom: 1px solid #585858;
+  border-radius: 0px 4px 4px 0px;
+}
+.addTask input,
+.addTask input:active {
+  border-left: 1px solid #585858;
+  border-top: 1px solid #585858;
+  border-bottom: 1px solid #585858;
+  border-radius: 4px 0px 0px 4px;
+}
+.addTask button {
+  cursor: pointer;
+  color: var(--button-color);
+}
+.topBar {
+  display: flex;
+  position: absolute;
+  border-radius: 4px 4px 0px 0px;
+  top: 0;
+  direction: rtl;
+  background: var(--background-dark);
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topBar .delete {
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #c43636;
+  color: #7e1919;
+  background: #df7777;
+  transition: 0.3s ease;
+  border-radius: 3px;
+}
+.topBar .delete:hover {
+  background: #f36c6c;
+}
+
+.topBar .complete {
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #9036c4;
+  color: #5e197e;
+  background: #b677df;
+  transition: 0.3s ease;
+  border-radius: 3px;
+}
+.topBar .complete:hover {
+  background: #c86cf3;
+}
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.bottomBar {
+  background: var(--background-dark);
+  box-sizing: border-box;
+  padding: 8px;
+  position: absolute;
+  border-radius: 0px 0px 2px 2px;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  transition: box-shadow 0.3s ease;
+}
+
+.bottomBar .status {
+  background: var(--container-background);
+  color: var(--text-light);
+  padding: 4px 8px;
+  border: 0px;
+  border-radius: 4px;
+}
+
+.deadlineSet {
+  background: var(--container-background);
+  color: var(--text-light);
+  border-radius: 4px;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  max-height: 32px;
+}
+:disabled {
+  background: #5e5e5e;
+  color: #424242;
+  cursor: not-allowed;
+}
+.trashIcon {
+  display: flex;
+  padding: 4px 2px;
+  width: 16px;
+}
+.timer {
+  display: flex;
+  direction: ltr;
+  gap: 8px;
+
+  background: var(--container-background);
+  padding: 6px 8px;
+  justify-content: space-between;
+  box-shadow: 0px 0px 0px 1px var(--container-border);
+  border-radius: 4px;
+}
+.timer > div {
+  font-size: 16px;
+  font-family: monospace;
+  line-height: normal;
+
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.ant-statistic-content {
+  font-size: 16px !important;
+  font-family: monospace !important;
+  margin-right: 0px !important;
+  color: var(--text-light) !important;
+}
+.timerBtn {
+  width: 16px;
+}
+.timerBtns {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 4px;
+  border: none;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.timerNumbers span {
+  font-size: 16px;
+  margin: 0;
+  line-height: 16px;
+  padding: 0;
+}
+.taskName {
+  margin-top: 24px;
+  padding: 64px 16px;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  word-wrap: break-word;
+}
+.start {
+  background: #603269;
+  border: 1px solid #5a3e5f;
+  color: #d48ee2;
+  transition: 0.3s ease;
+}
+.start:hover {
+  background: #923197;
+  box-shadow: 0px 5px 10px #5a3e5f66;
+}
+.pause {
+  background: #864646;
+  border: 1px solid #915050;
+  color: #f79797;
+  transition: 0.3s ease;
+}
+.pause:hover {
+  background: #c24545;
+}
+.activeTask {
+  /*box-shadow: 0px 0px 0px 1.5px #8c00ff, 0px 12px 25px #c16aff22;*/
+  border-top: 1px solid #8c00ff;
+  box-shadow: 0px -4px 12px #8c00ff22;
+}
+.credits {
+  position: absolute;
+  bottom: 16px;
+  color: var(--text-light);
+}
+.taskInput {
+  position: relative;
+}
+.enterBtn {
+  position: absolute;
+  top: 12px;
+  right: 32px;
+  color: #cecece;
+  border-radius: 4px;
+  border: 1px solid #333138;
+  padding: 4px 8px;
+}

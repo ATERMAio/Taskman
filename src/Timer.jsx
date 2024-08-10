@@ -8,6 +8,7 @@ export function Timer({ task, handleTimeStore, intervalId, setIntervalId }) {
 
   const startTimer = () => {
     if (!intervalId) {
+      task.status = "In Progress";
       lastUpdate = Date.now();
       setIntervalId(
         setInterval(() => {
@@ -34,8 +35,14 @@ export function Timer({ task, handleTimeStore, intervalId, setIntervalId }) {
   };
 
   const checkStatus = () => {
-    if (task.status === "Completed") {
+    if (
+      task.status === "Completed" ||
+      task.status === "Backlog" ||
+      task.status === "On Hold"
+    ) {
       pauseTimer(task.taskId);
+    } else {
+      startTimer(task.taskId);
     }
   };
 

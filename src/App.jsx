@@ -84,7 +84,9 @@ export default function App() {
         handleTimeStore={handleTimeStore}
         onCompletion={handleCompletion}
       />
-      <p className="credits">Taskman | Version 0.31a</p>
+      <p className="credits">
+        Taskman by <a href="https://aterma.io">ATERMA Studio</a> | Version 0.31a
+      </p>
     </div>
   );
 }

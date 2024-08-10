@@ -86,7 +86,7 @@ export default function App() {
       />
       <p className="credits">
         Taskman by{" "}
-        <a className="atermaLink" href="https://aterma.io">
+        <a className="atermaLink" href="https://aterma.io" target="_blank">
           ATERMA Studio
         </a>{" "}
         | Version 0.32a

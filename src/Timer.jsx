@@ -20,6 +20,7 @@ export function Timer({ task, handleTimeStore, intervalId, setIntervalId }) {
   };
 
   useEffect(() => handleTimeStore(task.taskId, timeElapsed), [timeElapsed]);
+  useEffect(() => checkStatus(task.taskId), [task.status]);
 
   const pauseTimer = () => {
     clearInterval(intervalId);
@@ -30,6 +31,12 @@ export function Timer({ task, handleTimeStore, intervalId, setIntervalId }) {
     lastUpdate = now;
 
     handleTimeStore(task.taskId, timeElapsed);
+  };
+
+  const checkStatus = () => {
+    if (task.status === "Completed") {
+      pauseTimer(task.taskId);
+    }
   };
 
   const formatValue = (value) => {

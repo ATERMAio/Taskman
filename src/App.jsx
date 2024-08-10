@@ -89,7 +89,7 @@ export default function App() {
         <a className="atermaLink" href="https://aterma.io">
           ATERMA Studio
         </a>{" "}
-        | Version 0.31a
+        | Version 0.32a
       </p>
     </div>
   );
@@ -155,12 +155,6 @@ function Task({
 }) {
   const [intervalId, setIntervalId] = useState(null);
   const deadlineRef = useRef(null);
-
-  useEffect(() => {
-    if (task.status === "completed") {
-      setIntervalId(null);
-    }
-  }, [task.status, intervalId]);
 
   return (
     <div className="task" key={task.taskId}>

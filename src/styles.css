@@ -244,7 +244,14 @@ button {
 .credits {
   position: absolute;
   bottom: 16px;
-  color: var(--text-light);
+  color: #585858;
+  background: #1f1d22;
+  padding: 8px;
+  border: 1px solid #333138;
+  border-radius: 4px;
+}
+.credits a {
+  text-decoration: none;
 }
 .taskInput {
   position: relative;

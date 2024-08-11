@@ -1,4 +1,4 @@
-# Taskman v0.31a
+# Taskman v0.32a
 
 Taskman is a simple task manager with a timer developed by [ATERMA Studio](https://aterma.io). It is currently on Alpha stage, still testing and adding features.
 

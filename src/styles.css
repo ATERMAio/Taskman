@@ -242,16 +242,49 @@ button {
   box-shadow: 0px -4px 12px #8c00ff22;
 }
 .credits {
-  position: absolute;
-  bottom: 16px;
   color: #585858;
   background: #1f1d22;
   padding: 8px;
   border: 1px solid #333138;
   border-radius: 4px;
+  width: 300px;
 }
 .credits a {
   text-decoration: none;
+  color: #e2136e;
+}
+.app {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-self: middle;
+  align-items: center;
+  height: 98vh;
+}
+.socialAccounts {
+  display: flex;
+  gap: 12px;
+  color: #585858;
+  background: #1f1d22;
+  padding: 8px;
+  border: 1px solid #333138;
+  border-radius: 4px;
+  width: 300px;
+}
+.socialAccounts a {
+  font-size: 14px;
+  color: white;
+  transition: 0.3s ease;
+}
+.socialAccounts a:hover {
+  color: #e2136e;
+}
+.footer {
+  position: absolute;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 .taskInput {
   position: relative;

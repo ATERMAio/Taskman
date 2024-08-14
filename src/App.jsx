@@ -1,6 +1,17 @@
 import { useEffect, useState, useRef } from "react";
 import { TrashIcon, CheckIcon } from "@heroicons/react/24/outline";
 import { useLocalStorageState } from "./useLocalStorageState";
+
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faLinkedinIn,
+  faFacebookSquare,
+} from "@fortawesome/free-brands-svg-icons";
+
 import "./styles.css";
 import { useKey } from "./useKey";
 import { Timer } from "./Timer";
@@ -84,13 +95,34 @@ export default function App() {
         handleTimeStore={handleTimeStore}
         onCompletion={handleCompletion}
       />
-      <p className="credits">
-        Taskman by{" "}
-        <a className="atermaLink" href="https://aterma.io" target="_blank">
-          ATERMA Studio
-        </a>{" "}
-        | Version 0.32a
-      </p>
+      <>
+        <Analytics />
+        <SpeedInsights />
+        <div className="footer">
+          <span className="socialAccounts">
+            <span>Follow us on:</span>
+            <a href="https://www.instagram.com/atermastudio" target="_blank">
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a href="https://www.facebook.com/atermastudio" target="_blank">
+              <FontAwesomeIcon icon={faFacebookSquare} />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/atermastudio"
+              target="_blank"
+            >
+              <FontAwesomeIcon icon={faLinkedinIn} />
+            </a>
+          </span>
+          <p className="credits">
+            Taskman by{" "}
+            <a className="atermaLink" href="https://aterma.io" target="_blank">
+              ATERMA Studio
+            </a>{" "}
+            | Version 0.32a
+          </p>
+        </div>
+      </>
     </div>
   );
 }

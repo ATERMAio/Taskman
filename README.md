@@ -16,3 +16,4 @@ Roadmap:
 
 - Hopefully can develop a full app that allows you to add projects and track each project's time and show reports from each project.
 - Login and each user should have their own tasks.
+- Integration with a DB to store timesheets and tasks on each client seperately.
